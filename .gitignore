@@ -2,3 +2,4 @@ AppSupport
 .DS_Store
 .config/gh
 .config/wireshark
+.config/nvim.bak
