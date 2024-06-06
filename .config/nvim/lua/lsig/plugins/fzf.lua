@@ -2,9 +2,75 @@ return {
   "ibhagwan/fzf-lua",
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  keys = {
+    {
+      "<leader><space>",
+      function()
+        require("fzf-lua").buffers()
+      end,
+      desc = "Search commands",
+    },
+    {
+      "<leader>lg",
+      function()
+        require("fzf-lua").live_grep()
+      end,
+      desc = "Search command history",
+    },
+    {
+      "<leader>sf",
+      function()
+        require("fzf-lua").files()
+      end,
+      desc = "Find files",
+    },
+    {
+      "<leader>sg",
+      function()
+        require("fzf-lua").git_files()
+      end,
+      desc = "Find git files",
+    },
+    {
+      "<leader>/gb",
+      function()
+        require("fzf-lua").git_branches()
+      end,
+      desc = "Search git branches",
+    },
+    {
+      "<leader>/gc",
+      function()
+        require("fzf-lua").git_commits()
+      end,
+      desc = "Search git commits",
+    },
+    {
+      "<leader>/gC",
+      function()
+        require("fzf-lua").git_bcommits()
+      end,
+      desc = "Search git buffer commits",
+    },
+    {
+      "<leader>//",
+      function()
+        require("fzf-lua").resume()
+      end,
+      desc = "Resume FZF",
+    },
+  },
   config = function()
     -- calling `setup` is optional for customization
-    require("fzf-lua").setup({})
+    local fzf = require("fzf-lua")
+    fzf.setup({
+      keymap = {
+        fzf = {
+          ["CTRL-Q"] = "select-all+accept",
+        },
+      },
+    })
+    fzf.register_ui_select()
 
     local ts_group = vim.api.nvim_create_augroup("TelescopeOnEnter", { clear = true })
     vim.api.nvim_create_autocmd({ "VimEnter" }, {
