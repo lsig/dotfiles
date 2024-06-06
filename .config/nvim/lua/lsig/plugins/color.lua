@@ -11,11 +11,10 @@ return {
       integrations = {
         cmp = true,
         gitsigns = true,
-        telescope = true,
         fidget = true,
-        lsp_saga = true,
         mason = true,
-        lsp_trouble = true,
+        diffview = true,
+        neogit = true,
       },
     })
 
