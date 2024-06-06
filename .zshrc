@@ -95,5 +95,6 @@ alias c='clear'
 export GIT_EDITOR='nvim'
 
 # Shell integrations
+eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
