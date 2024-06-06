@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>sb", require("telescope.builtin").git_branches, { d
 vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
 vim.keymap.set("n", "<leader>/", function()
-	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown())
 end, { desc = "[/] Fuzzily search in current buffer" })
 
 vim.keymap.set("n", "<leader>pv", ":Oil<CR>", { silent = true })
@@ -83,9 +83,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
