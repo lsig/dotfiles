@@ -21,6 +21,10 @@ vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bx", ":bdelete<CR>", { silent = true })
 
+-- loclist remaps
+vim.keymap.set("n", "<leader>j", ":lnext<CR>zz", { silent = true })
+vim.keymap.set("n", "<leader>k", ":lprev<CR>zz", { silent = true })
+
 -- Git remaps
 vim.keymap.set("n", "]c", require("gitsigns").prev_hunk, { desc = "[G]o to [P]revious Hunk" })
 vim.keymap.set("n", "[c", require("gitsigns").next_hunk, { desc = "[G]o to [N]ext Hunk" })
