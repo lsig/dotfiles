@@ -3,7 +3,6 @@ return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "echasnovski/mini.surround", opts = {}, version = "*" },
   { "echasnovski/mini.pairs", opts = {}, version = "*" },
-  { "numToStr/Comment.nvim", opts = {}, event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
