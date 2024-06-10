@@ -1,6 +1,5 @@
 return {
   "ibhagwan/fzf-lua",
-  -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     {
@@ -93,6 +92,7 @@ return {
             ["ctrl-l"] = { fn = actions.git_unstage, reload = true },
             ["ctrl-h"] = { fn = actions.git_stage, reload = true },
             ["ctrl-x"] = { fn = actions.git_reset, reload = true },
+            ["ctrl-s"] = { fn = actions.git_stage_unstage, reload = true },
           },
         },
       },
