@@ -3,3 +3,4 @@ AppSupport
 .config/gh
 .config/wireshark
 .config/nvim.bak
+.config/gcloud
