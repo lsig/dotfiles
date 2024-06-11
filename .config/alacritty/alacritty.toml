@@ -1,14 +1,24 @@
+
+live_config_reload = true
+
 [env]
 term = "xterm-256color"
 
 [window]
-opacity = 1
+startup_mode = "SimpleFullscreen"
 
-padding.x = 0
-padding.y = 0
+opacity = 0.7
+blur = true
 
-decorations = "Full"
+title = "Alacritty"
+
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+
+decorations = "Buttonless"
 decorations_theme_variant = "Dark"
+
+option_as_alt = "Both"
 
 [font]
 normal.family = "Hack Nerd Font"
@@ -17,6 +27,13 @@ italic.family = "Hack Nerd Font"
 bold_italic.family = "Hack Nerd Font"
 
 size = 15.0
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
 
 # Colors (Tokyo Night)
 # Source https//github.com/zatchheems/tokyo-night-alacritty-theme
