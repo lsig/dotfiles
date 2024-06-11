@@ -26,11 +26,7 @@ bold.family = "Hack Nerd Font"
 italic.family = "Hack Nerd Font"
 bold_italic.family = "Hack Nerd Font"
 
-size = 15.0
-
-[scrolling]
-history = 5000
-multiplier = 3
+size = 15
 
 [mouse]
 hide_when_typing = true
