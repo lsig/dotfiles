@@ -3,6 +3,7 @@ return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "echasnovski/mini.surround", opts = {}, version = "*" },
   { "echasnovski/mini.pairs", opts = {}, version = "*" },
+  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
@@ -20,7 +21,6 @@ return {
       },
     },
   },
-  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   { "mbbill/undotree", event = "VeryLazy" },
   {
     "stevearc/oil.nvim",
