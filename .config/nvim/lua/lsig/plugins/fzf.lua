@@ -24,9 +24,16 @@ return {
       desc = "Search command history",
     },
     {
-      "<leader>sf",
+      "<C-t>",
       function()
         require("fzf-lua").files()
+      end,
+      desc = "Find files",
+    },
+    {
+      "<C-r>",
+      function()
+        require("fzf-lua").command_history()
       end,
       desc = "Find files",
     },

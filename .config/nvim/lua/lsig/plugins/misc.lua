@@ -16,7 +16,9 @@ return {
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
     "stevearc/oil.nvim",
-    opts = {},
+    opts = {
+      keymaps = { ["<C-t>"] = false },
+    },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
