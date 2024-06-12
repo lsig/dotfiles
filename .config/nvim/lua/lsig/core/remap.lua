@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>ht", require("gitsigns").preview_hunk_inline, { des
 vim.keymap.set("n", "<leader>hs", require("gitsigns").stage_hunk, { desc = "[H]unk [S]tage" })
 vim.keymap.set("n", "<leader>hr", require("gitsigns").reset_hunk, { desc = "[H]unk [R]eset" })
 vim.keymap.set("n", "<leader>B", require("gitsigns").toggle_current_line_blame, { desc = "[G]it [B]lame" })
-vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
+vim.keymap.set("n", "<leader>gc", ":hor Git commit<CR>")
 vim.keymap.set("n", "<leader>p", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>P", ":Git push<CR>")
 
