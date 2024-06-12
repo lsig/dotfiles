@@ -33,8 +33,8 @@ vim.keymap.set("n", "<leader>hs", require("gitsigns").stage_hunk, { desc = "[H]u
 vim.keymap.set("n", "<leader>hr", require("gitsigns").reset_hunk, { desc = "[H]unk [R]eset" })
 vim.keymap.set("n", "<leader>B", require("gitsigns").toggle_current_line_blame, { desc = "[G]it [B]lame" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
-vim.keymap.set("n", "<leader>gp", ":Git pull<CR>")
-vim.keymap.set("n", "<leader>gP", ":Git push<CR>")
+vim.keymap.set("n", "<leader>p", ":Git pull<CR>")
+vim.keymap.set("n", "<leader>P", ":Git push<CR>")
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")
