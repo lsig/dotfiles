@@ -54,6 +54,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
+-- Undotree
+vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>", { desc = "Toggle undotree" })
+
 -- insert mode remaps
 vim.keymap.set("i", "<C-c>", "<ESC>")
 
