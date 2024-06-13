@@ -90,6 +90,10 @@ return {
         fzf = {
           ["CTRL-Q"] = "select-all+accept",
         },
+        builtin = {
+          ["<C-f>"] = "preview-page-down",
+          ["<C-b>"] = "preview-page-up",
+        },
       },
       git = {
         status = {
