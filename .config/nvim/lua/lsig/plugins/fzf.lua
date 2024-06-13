@@ -31,7 +31,7 @@ return {
       desc = "Find files",
     },
     {
-      "<C-r>",
+      "<C-h>",
       function()
         require("fzf-lua").command_history()
       end,
@@ -91,8 +91,8 @@ return {
           ["CTRL-Q"] = "select-all+accept",
         },
         builtin = {
-          ["<C-f>"] = "preview-page-down",
-          ["<C-b>"] = "preview-page-up",
+          ["<C-f>"] = "preview-down",
+          ["<C-b>"] = "preview-up",
         },
       },
       git = {
