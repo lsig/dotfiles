@@ -31,7 +31,7 @@ return {
       desc = "Find files",
     },
     {
-      "<C-h>",
+      "<leader>ch",
       function()
         require("fzf-lua").command_history()
       end,
