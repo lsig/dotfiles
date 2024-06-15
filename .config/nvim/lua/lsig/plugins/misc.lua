@@ -1,8 +1,6 @@
 return {
   { "nvim-lua/plenary.nvim" },
   { "tpope/vim-sleuth", event = "VeryLazy" },
-  { "echasnovski/mini.surround", opts = {}, version = "*" },
-  { "echasnovski/mini.pairs", opts = {}, version = "*" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
