@@ -32,9 +32,14 @@ vim.keymap.set("n", "<leader>ht", require("gitsigns").preview_hunk_inline, { des
 vim.keymap.set("n", "<leader>hs", require("gitsigns").stage_hunk, { desc = "[H]unk [S]tage" })
 vim.keymap.set("n", "<leader>hr", require("gitsigns").reset_hunk, { desc = "[H]unk [R]eset" })
 vim.keymap.set("n", "<leader>B", require("gitsigns").toggle_current_line_blame, { desc = "[G]it [B]lame" })
-vim.keymap.set("n", "<leader>gc", ":hor Git commit<CR>")
 vim.keymap.set("n", "<leader>p", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>P", ":Git push<CR>")
+vim.keymap.set("n", "gc", "<Cmd>Git commit<CR>", { desc = "Commit" })
+vim.keymap.set("n", "gC", "<Cmd>Git commit --amend<CR>", { desc = "Commit amend" })
+vim.keymap.set("n", "gl", "<Cmd>Git log --oneline<CR>", { desc = "log" })
+vim.keymap.set("n", "gL", "<Cmd>Git log --oneline --follow -- %<CR>", { desc = "Log buffer" })
+vim.keymap.set("n", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at cursor" })
+vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at selection" })
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")
