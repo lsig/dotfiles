@@ -32,14 +32,14 @@ vim.keymap.set("n", "<leader>ht", require("gitsigns").preview_hunk_inline, { des
 vim.keymap.set("n", "<leader>hs", require("gitsigns").stage_hunk, { desc = "[H]unk [S]tage" })
 vim.keymap.set("n", "<leader>hr", require("gitsigns").reset_hunk, { desc = "[H]unk [R]eset" })
 vim.keymap.set("n", "<leader>B", require("gitsigns").toggle_current_line_blame, { desc = "[G]it [B]lame" })
-vim.keymap.set("n", "<leader>p", ":Git pull<CR>")
-vim.keymap.set("n", "<leader>P", ":Git push<CR>")
-vim.keymap.set("n", "gc", "<Cmd>Git commit<CR>", { desc = "Commit" })
-vim.keymap.set("n", "gC", "<Cmd>Git commit --amend<CR>", { desc = "Commit amend" })
-vim.keymap.set("n", "gl", "<Cmd>Git log --oneline<CR>", { desc = "log" })
-vim.keymap.set("n", "gL", "<Cmd>Git log --oneline --follow -- %<CR>", { desc = "Log buffer" })
-vim.keymap.set("n", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at cursor" })
-vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at selection" })
+vim.keymap.set("n", "<leader>p", ":Git pull<CR>", { silent = true })
+vim.keymap.set("n", "<leader>P", ":Git push<CR>", { silent = true })
+vim.keymap.set("n", "gc", "<Cmd>Git commit<CR>", { silent = true, desc = "Commit" })
+vim.keymap.set("n", "gC", "<Cmd>Git commit --amend<CR>", { silent = true, desc = "Commit amend" })
+vim.keymap.set("n", "gl", "<Cmd>Git log --oneline<CR>", { silent = true, desc = "log" })
+vim.keymap.set("n", "gL", "<Cmd>Git log --oneline --follow -- %<CR>", { silent = true, desc = "Log buffer" })
+vim.keymap.set("n", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
+vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at selection" })
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")
@@ -60,14 +60,14 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Undotree
-vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>", { desc = "Toggle undotree" })
+vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>", { silent = true, desc = "Toggle undotree" })
 
 -- insert mode remaps
 vim.keymap.set("i", "<C-c>", "<ESC>")
 
 -- visual mode remaps
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
