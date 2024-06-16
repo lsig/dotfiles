@@ -8,17 +8,6 @@ return {
     opts = {},
     event = "VeryLazy",
   },
-  {
-    "j-hui/fidget.nvim",
-    opts = {
-      notification = {
-        override_vim_notify = true, -- Automatically override vim.notify() with Fidget
-        window = {
-          align = "top",
-        },
-      },
-    },
-  },
   { "mbbill/undotree", event = "VeryLazy" },
   {
     "stevearc/oil.nvim",
