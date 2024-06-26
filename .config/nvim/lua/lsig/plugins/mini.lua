@@ -14,9 +14,7 @@ return {
       require("mini.git").setup()
       require("mini.ai").setup()
       local notify = require("mini.notify")
-      notify.setup({
-        window = { config = { border = "double" } },
-      })
+      notify.setup()
       vim.notify = notify.make_notify({
         ERROR = { duration = 5000 },
         WARN = { duration = 4000 },
