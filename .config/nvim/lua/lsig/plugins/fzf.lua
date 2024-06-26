@@ -79,6 +79,13 @@ return {
       end,
       desc = "Show git status",
     },
+    {
+      "<leader>/w",
+      function()
+        require("fzf-lua").grep_cword()
+      end,
+      desc = "Search for word under cursor",
+    },
   },
   config = function()
     -- calling `setup` is optional for customization
