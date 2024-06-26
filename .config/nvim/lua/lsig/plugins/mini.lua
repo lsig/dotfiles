@@ -4,6 +4,7 @@ return {
     version = false,
     config = function()
       require("mini.jump2d").setup({
+        view = { dim = true },
         mappings = {
           start_jumping = ";",
         },
@@ -13,7 +14,9 @@ return {
       require("mini.git").setup()
       require("mini.ai").setup()
       local notify = require("mini.notify")
-      notify.setup()
+      notify.setup({
+        window = { config = { border = "double" } },
+      })
       vim.notify = notify.make_notify({
         ERROR = { duration = 5000 },
         WARN = { duration = 4000 },
