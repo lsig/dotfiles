@@ -3,22 +3,27 @@ return {
     "echasnovski/mini.nvim",
     version = false,
     config = function()
+      require("mini.ai").setup()
+      require("mini.git").setup()
+      require("mini.pairs").setup()
+      require("mini.surround").setup()
+      require("mini.bufremove").setup()
+      require("mini.cursorword").setup()
+      require("mini.trailspace").setup()
+
+      -- Hop config
       require("mini.jump2d").setup({
         view = { dim = true },
         mappings = {
           start_jumping = ";",
         },
       })
-      require("mini.pairs").setup()
-      require("mini.surround").setup()
-      require("mini.git").setup()
-      require("mini.ai").setup()
 
       -- Hipattern setup
       local hipatterns = require("mini.hipatterns")
       hipatterns.setup({
         highlighters = {
-          -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE', 'WARN'
+          -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
           fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
           hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
           todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
