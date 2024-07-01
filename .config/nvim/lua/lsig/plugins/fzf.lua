@@ -35,7 +35,7 @@ return {
       function()
         require("fzf-lua").command_history()
       end,
-      desc = "Find files",
+      desc = "Command history",
     },
     {
       "<leader>sg",
