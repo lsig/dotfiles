@@ -17,13 +17,7 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { silent = true, desc = "Go to ne
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { silent = true, desc = "Go to previous tab" })
 
 -- buffer remaps
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { silent = true, desc = "Next buffer" })
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>bx", ":lua MiniBufremove.delete() <CR>", { silent = true, desc = "Delete buffer" })
-
--- loclist remaps
-vim.keymap.set("n", "<leader>j", ":lnext<CR>zz", { silent = true, desc = "Next location" })
-vim.keymap.set("n", "<leader>k", ":lprev<CR>zz", { silent = true, desc = "Previous location" })
 
 -- Git remaps
 vim.keymap.set("n", "<leader>to", "<Cmd>lua require('mini.diff').toggle_overlay()<CR>", { desc = "[T]oggle [O]verlay" })
@@ -49,8 +43,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
@@ -68,13 +60,3 @@ vim.keymap.set("v", ">", ">gv")
 
 -- x mode remaps
 vim.keymap.set("x", "<leader>p", [["_dP]])
-
--- highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})

@@ -7,11 +7,25 @@ return {
       require("mini.pairs").setup({
         modes = { insert = true, command = true, terminal = true },
       })
+      require("mini.extra").setup()
       require("mini.comment").setup()
       require("mini.surround").setup()
+      require("mini.bracketed").setup()
       require("mini.bufremove").setup()
       require("mini.cursorword").setup()
       require("mini.trailspace").setup()
+
+      -- Basics
+      require("mini.basics").setup({
+        options = {
+          -- Manage options manually
+          basic = false,
+        },
+        mappings = {
+          windows = true,
+          move_with_alt = true,
+        },
+      })
 
       -- Git
       require("mini.git").setup()
@@ -32,15 +46,14 @@ return {
 
       -- Hipattern setup
       local hipatterns = require("mini.hipatterns")
+      local hi_words = MiniExtra.gen_highlighter.words
       hipatterns.setup({
         highlighters = {
-          -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-          fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-          hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-          todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-          note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+          fixme = hi_words({ "FIXME", "Fixme", "fixme" }, "MiniHipatternsFixme"),
+          hack = hi_words({ "HACK", "Hack", "hack" }, "MiniHipatternsHack"),
+          todo = hi_words({ "TODO", "Todo", "todo" }, "MiniHipatternsTodo"),
+          note = hi_words({ "NOTE", "Note", "note" }, "MiniHipatternsNote"),
 
-          -- Highlight hex color strings (`#rrggbb`) using that color
           hex_color = hipatterns.gen_highlighter.hex_color(),
         },
       })
@@ -68,6 +81,15 @@ return {
           -- Leader triggers
           { mode = "n", keys = "<Leader>" },
           { mode = "x", keys = "<Leader>" },
+
+          -- mini.basics
+          { mode = "n", keys = [[\]] },
+
+          -- mini.bracketed
+          { mode = "n", keys = "[" },
+          { mode = "n", keys = "]" },
+          { mode = "x", keys = "[" },
+          { mode = "x", keys = "]" },
 
           -- Built-in completion
           { mode = "i", keys = "<C-x>" },
@@ -102,9 +124,10 @@ return {
           miniclue.gen_clues.g(),
           miniclue.gen_clues.marks(),
           miniclue.gen_clues.registers(),
-          miniclue.gen_clues.windows(),
+          miniclue.gen_clues.windows({ submode_resize = true }),
           miniclue.gen_clues.z(),
         },
+        window = { config = { border = "double" } },
       })
     end,
   },
