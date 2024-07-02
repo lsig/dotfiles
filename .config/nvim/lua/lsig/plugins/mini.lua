@@ -75,6 +75,16 @@ return {
       })
 
       -- Clue
+      local custom_clues = {
+        { mode = "n", keys = "<Leader>b", desc = "+Buffers" },
+        { mode = "n", keys = "<Leader>g", desc = "+Git" },
+        { mode = "n", keys = "<Leader>l", desc = "+Grep" },
+        { mode = "n", keys = "<Leader>s", desc = "+Splits" },
+        { mode = "n", keys = "<Leader>t", desc = "+Tabs" },
+        { mode = "n", keys = "<Leader>w", desc = "+Workspace" },
+        { mode = "n", keys = "<Leader>/", desc = "+FZF" },
+      }
+
       local miniclue = require("mini.clue")
       miniclue.setup({
         triggers = {
@@ -120,6 +130,7 @@ return {
 
         clues = {
           -- Enhance this by adding descriptions for <Leader> mapping groups
+          custom_clues,
           miniclue.gen_clues.builtin_completion(),
           miniclue.gen_clues.g(),
           miniclue.gen_clues.marks(),

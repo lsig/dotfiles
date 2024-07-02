@@ -1,8 +1,7 @@
 -- normal mode remaps
-vim.keymap.set("n", "<leader>pv", ":Oil<CR>", { silent = true, desc = "Open Oil" })
+vim.keymap.set("n", "<leader>o", ":Oil<CR>", { silent = true, desc = "Open Oil" })
 
 -- window remaps
-vim.keymap.set("n", "<leader>cd", ":cd %:p:h", { silent = true, desc = "Change directory to file" })
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sl", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Equalize window sizes" })
@@ -20,15 +19,20 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { silent = true, desc = "Go to pr
 vim.keymap.set("n", "<leader>bx", ":lua MiniBufremove.delete() <CR>", { silent = true, desc = "Delete buffer" })
 
 -- Git remaps
-vim.keymap.set("n", "<leader>to", "<Cmd>lua require('mini.diff').toggle_overlay()<CR>", { desc = "[T]oggle [O]verlay" })
-vim.keymap.set("n", "<leader>P", ":Git push<CR>", { silent = true, desc = "Git push" })
-vim.keymap.set("n", "<leader>p", ":Git pull<CR>", { silent = true, desc = "Git pull" })
+vim.keymap.set("n", "<leader>go", "<Cmd>lua require('mini.diff').toggle_overlay()<CR>", { desc = "[T]oggle [O]verlay" })
+vim.keymap.set("n", "<leader>gP", ":Git push<CR>", { silent = true, desc = "Git push" })
+vim.keymap.set("n", "<leader>gp", ":Git pull<CR>", { silent = true, desc = "Git pull" })
 vim.keymap.set("n", "<leader>gc", "<Cmd>Git commit<CR>", { silent = true, desc = "Commit" })
 vim.keymap.set("n", "<leader>gC", "<Cmd>Git commit --amend<CR>", { silent = true, desc = "Commit amend" })
-vim.keymap.set("n", "gl", "<Cmd>Git log --oneline<CR>", { silent = true, desc = "log" })
-vim.keymap.set("n", "gL", "<Cmd>Git log --oneline --follow -- %<CR>", { silent = true, desc = "Log buffer" })
-vim.keymap.set("n", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
-vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at selection" })
+vim.keymap.set("n", "<leader>gl", "<Cmd>Git log --oneline<CR>", { silent = true, desc = "log" })
+vim.keymap.set("n", "<leader>gL", "<Cmd>Git log --oneline --follow -- %<CR>", { silent = true, desc = "Log buffer" })
+vim.keymap.set("n", "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
+vim.keymap.set(
+  "x",
+  "<leader>gs",
+  "<Cmd>lua MiniGit.show_at_cursor()<CR>",
+  { silent = true, desc = "Show at selection" }
+)
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")

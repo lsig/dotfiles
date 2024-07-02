@@ -14,14 +14,14 @@ return {
       function()
         require("fzf-lua").live_grep()
       end,
-      desc = "Search command history",
+      desc = "Live grep",
     },
     {
-      "<leader>/",
+      "<leader>lb",
       function()
         require("fzf-lua").lgrep_curbuf()
       end,
-      desc = "Search command history",
+      desc = "Grep current buffer",
     },
     {
       "<C-t>",
@@ -31,21 +31,21 @@ return {
       desc = "Find files",
     },
     {
-      "<leader>ch",
+      "<leader>lh",
       function()
         require("fzf-lua").command_history()
       end,
       desc = "Command history",
     },
     {
-      "<leader>sg",
+      "<leader>gf",
       function()
         require("fzf-lua").git_files()
       end,
       desc = "Find git files",
     },
     {
-      "<leader>/gb",
+      "<leader>gb",
       function()
         require("fzf-lua").git_branches()
       end,
@@ -66,7 +66,7 @@ return {
       desc = "Search git buffer commits",
     },
     {
-      "<leader>//",
+      "<leader>/r",
       function()
         require("fzf-lua").resume()
       end,
@@ -80,7 +80,7 @@ return {
       desc = "Show git status",
     },
     {
-      "<leader>/w",
+      "<leader>lw",
       function()
         require("fzf-lua").grep_cword()
       end,
