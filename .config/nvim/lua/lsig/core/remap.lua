@@ -1,5 +1,5 @@
 -- normal mode remaps
-vim.keymap.set("n", "<leader>o", ":Oil<CR>", { silent = true, desc = "Open Oil" })
+vim.keymap.set("n", "-", ":Oil<CR>", { silent = true, desc = "Open Oil" })
 
 -- window remaps
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
