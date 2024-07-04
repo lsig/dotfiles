@@ -15,6 +15,10 @@ return {
       require("mini.cursorword").setup()
       require("mini.trailspace").setup()
 
+      -- Icons
+      require("mini.icons").setup()
+      MiniIcons.mock_nvim_web_devicons()
+
       -- Basics
       require("mini.basics").setup({
         options = {
