@@ -114,6 +114,19 @@ return {
           },
         },
       },
+      lsp = {
+        code_actions = {
+          prompt = "Code actions",
+          winopts = {
+            width = 0.8,
+            height = 0.7,
+            preview = {
+              layout = "horizontal",
+              horizontal = "up:75%",
+            },
+          },
+        },
+      },
     })
     fzf.register_ui_select()
 
