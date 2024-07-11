@@ -10,11 +10,11 @@ return {
       transparent_background = false,
       integrations = {
         cmp = true,
-        gitsigns = true,
-        fidget = true,
         mason = true,
-        diffview = true,
-        neogit = true,
+        mini = {
+          enabled = true,
+          indentscope_color = "",
+        },
       },
     })
 

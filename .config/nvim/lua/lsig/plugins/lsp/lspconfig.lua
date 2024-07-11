@@ -91,7 +91,6 @@ return {
       { "williamboman/mason.nvim", config = true },
       { "williamboman/mason-lspconfig.nvim" },
       { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-      { "onsails/lspkind.nvim" },
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
