@@ -9,22 +9,31 @@
 
 ### Brew packages
 
-- bat 
+- bat
 - fzf
 - fd
 - ripgrep
-- gh 
+- gh
 - go
 - jq
 - nvim
 - zoxide
 
 ```bash
-brew install bat fzf fd ripgrep gh go jq nvim zoxide
+brew install bat fzf fd ripgrep gh go jq nvim zoxide delta
 ```
 
 ### Github CLI completions
 
 ```bash
 gh completion -s zsh > .local/share/zinit/completions/_gh
+```
+
+### Git config for Delta
+
+```bash
+[include]
+	path = ~/.config/delta/themes/catppuccin.gitconfig
+[delta]
+	features = catppuccin-mocha
 ```
