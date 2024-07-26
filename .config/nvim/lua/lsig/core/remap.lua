@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>gc", "<Cmd>Git commit<CR>", { silent = true, desc =
 vim.keymap.set("n", "<leader>gC", "<Cmd>Git commit --amend<CR>", { silent = true, desc = "Commit amend" })
 vim.keymap.set("n", "<leader>gl", "<Cmd>Git log --oneline<CR>", { silent = true, desc = "log" })
 vim.keymap.set("n", "<leader>gL", "<Cmd>Git log --oneline --follow -- %<CR>", { silent = true, desc = "Log buffer" })
-vim.keymap.set("n", "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
+vim.keymap.set("n", "<leader>gS", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
 vim.keymap.set(
   "x",
   "<leader>gs",

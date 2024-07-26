@@ -17,8 +17,6 @@ vim.opt.wrap = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.scrolloff = 8
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

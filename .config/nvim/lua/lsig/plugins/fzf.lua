@@ -2,14 +2,14 @@ return {
   "ibhagwan/fzf-lua",
   keys = {
     {
-      "<leader><space>",
+      "<C-\\>",
       function()
         require("fzf-lua").buffers()
       end,
       desc = "Search commands",
     },
     {
-      "<leader>lg",
+      "<C-l>",
       function()
         require("fzf-lua").live_grep()
       end,
@@ -23,7 +23,7 @@ return {
       desc = "Grep current buffer",
     },
     {
-      "<C-t>",
+      "<C-p>",
       function()
         require("fzf-lua").files()
       end,
@@ -72,7 +72,7 @@ return {
       desc = "Resume FZF",
     },
     {
-      "<leader>gs",
+      "<C-g>",
       function()
         require("fzf-lua").git_status()
       end,
@@ -91,7 +91,10 @@ return {
     local fzf = require("fzf-lua")
     local actions = require("fzf-lua.actions")
     fzf.setup({
-      defaults = { formatter = { "path.filename_first" } },
+      defaults = {
+        formatter = { "path.filename_first" },
+        defaults = { file_icons = "mini" },
+      },
       keymap = {
         fzf = {
           ["CTRL-Q"] = "select-all+accept",

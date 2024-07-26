@@ -97,7 +97,7 @@ return {
         opts = {
           library = {
             -- When relative, you can also provide a path to the library in the plugin dir
-            "luvit-meta/library",
+            { "luvit-meta/library", words = { "vim%.uv" } },
           },
         },
       },
@@ -109,7 +109,7 @@ return {
       require("mason").setup()
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       local mason_lspconfig = require("mason-lspconfig")
