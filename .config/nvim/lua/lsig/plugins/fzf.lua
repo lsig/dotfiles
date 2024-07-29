@@ -9,7 +9,7 @@ return {
       desc = "Search commands",
     },
     {
-      "<C-l>",
+      "<C-f>",
       function()
         require("fzf-lua").live_grep()
       end,
