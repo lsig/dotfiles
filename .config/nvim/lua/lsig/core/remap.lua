@@ -1,6 +1,20 @@
 -- normal mode remaps
 vim.keymap.set("n", "-", ":Oil<CR>", { silent = true, desc = "Open Oil" })
 
+-- Fzf
+vim.keymap.set("n", "<C-\\>", ":FzfLua buffers<CR>", { desc = "Search commands" })
+vim.keymap.set("n", "<C-f>", ":FzfLua live_grep<CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>lb", ":FzfLua lgrep_curbuf<CR>", { desc = "Grep current buffer" })
+vim.keymap.set("n", "<C-p>", ":FzfLua files<CR>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>lh", ":FzfLua command_history<CR>", { desc = "Command history" })
+vim.keymap.set("n", "<leader>gf", ":FzfLua git_files<CR>", { desc = "Find git files" })
+vim.keymap.set("n", "<leader>gb", ":FzfLua git_branches<CR>", { desc = "Search git branches" })
+vim.keymap.set("n", "<leader>/gc", ":FzfLua git_commits<CR>", { desc = "Search git commits" })
+vim.keymap.set("n", "<leader>/gC", ":FzfLua git_bcommits<CR>", { desc = "Search git buffer commits" })
+vim.keymap.set("n", "<leader>/r", ":FzfLua resume<CR>", { desc = "Resume FZF" })
+vim.keymap.set("n", "<C-g>", ":FzfLua git_status<CR>", { desc = "Show git status" })
+vim.keymap.set("n", "<leader>lw", ":FzfLua grep_cword<CR>", { desc = "Search for word under cursor" })
+
 -- window remaps
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sl", "<C-w>s", { desc = "Split window horizontally" })
