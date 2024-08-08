@@ -11,6 +11,7 @@ return {
       integrations = {
         cmp = true,
         mason = true,
+        fzf = true,
         mini = {
           enabled = true,
           indentscope_color = "",
