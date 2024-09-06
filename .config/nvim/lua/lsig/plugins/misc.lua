@@ -12,15 +12,11 @@ return {
     },
   },
   -- {
-  --   "m4xshen/hardtime.nvim",
-  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  --   opts = {},
+  --   dir = "~/repos/messenger.nvim", -- Your path
+  --   name = "messenger",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     border = "rounded",
+  --   },
   -- },
-  {
-    "lsig/messenger.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("messenger").setup()
-    end,
-  },
 }

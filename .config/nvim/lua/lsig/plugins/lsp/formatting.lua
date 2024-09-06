@@ -41,6 +41,8 @@ return {
         python = { "black" },
         rust = { "rustfmt" },
         go = { "gofmt" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
       },
     },
   },
