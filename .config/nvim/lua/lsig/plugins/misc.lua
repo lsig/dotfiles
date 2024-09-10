@@ -11,12 +11,17 @@ return {
       keymaps = { ["<C-t>"] = false },
     },
   },
-  -- {
-  --   dir = "~/repos/messenger.nvim", -- Your path
-  --   name = "messenger",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     border = "rounded",
-  --   },
-  -- },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    opts = {},
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+  },
+  {
+    dir = "~/repos/messenger.nvim", -- Your path
+    name = "messenger",
+    event = "VeryLazy",
+    opts = {
+      border = "rounded",
+    },
+  },
 }

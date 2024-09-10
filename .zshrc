@@ -46,7 +46,7 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/conf.toml)"
 fi
 
-# Keybindings 
+# Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -78,9 +78,10 @@ alias c='clear'
 
 # ENV Variables
 export GIT_EDITOR='nvim'
+export PATH=$PATH:$HOME/go/bin
+export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
 
 # Shell integrations
 source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
-# eval "$(fzf --zsh)"
