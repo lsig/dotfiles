@@ -49,7 +49,7 @@ local servers = {
   },
   html = {},
   cssls = {},
-  tsserver = {},
+  ts_ls = {},
   clangd = {},
   sqlls = {},
   gopls = {
