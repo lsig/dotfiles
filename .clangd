@@ -1,0 +1,39 @@
+CompileFlags:
+  Add:
+  - -DLOCAL
+  - -Wall
+  - -O2
+  - -Wextra
+  - -Wshadow
+  - -Wconversion
+  - -Wfloat-equal
+  - -Wno-unused-const-variable
+  - -Wno-sign-conversion
+  - -std=c++20
+  - --gcc-toolchain=/opt/homebrew/opt/gcc
+  - --target=aarch64-apple-darwin
+  QueryDriver: /opt/homebrew/bin/g++-14
+
+Diagnostics:
+  UnusedIncludes: Strict
+  ClangTidy:
+    Add:
+      - bugprone-*
+      - cert-*
+      - modernize-*
+      - performance-*
+      - readability-*
+      - cppcoreguidelines-*
+      - misc-*
+      - portability-*
+    Remove:
+      - bugprone-easily-swappable-parameters
+      - modernize-use-trailing-return-type
+      - readability-identifier-length
+
+Index:
+  Background: Build
+  StandardLibrary: Yes
+
+Hover:
+  ShowAKA: Yes

@@ -80,8 +80,10 @@ alias c='clear'
 export GIT_EDITOR='nvim'
 export PATH=$PATH:$HOME/go/bin
 export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
+export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
 
 # Shell integrations
 source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

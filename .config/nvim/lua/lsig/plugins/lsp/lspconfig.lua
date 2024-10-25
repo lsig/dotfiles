@@ -50,7 +50,15 @@ local servers = {
   html = {},
   cssls = {},
   ts_ls = {},
-  clangd = {},
+  clangd = {
+    init_options = {
+      clangdFileStatus = true, -- Provides information about activity on clangd’s per-file worker thread
+      usePlaceholders = true,
+      completeUnimported = true,
+      semanticHighlighting = true,
+      fallbackFlags = { "--std=c++20" },
+    },
+  },
   sqlls = {},
   gopls = {
     filetypes = {
