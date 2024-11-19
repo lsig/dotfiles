@@ -30,6 +30,8 @@ Diagnostics:
       - bugprone-easily-swappable-parameters
       - modernize-use-trailing-return-type
       - readability-identifier-length
+      - readability-magic-numbers
+      - cppcoreguidelines-avoid-magic-numbers
 
 Index:
   Background: Build
