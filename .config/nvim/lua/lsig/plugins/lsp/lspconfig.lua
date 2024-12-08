@@ -52,11 +52,22 @@ local servers = {
   ts_ls = {},
   clangd = {
     init_options = {
-      clangdFileStatus = true, -- Provides information about activity on clangd’s per-file worker thread
+      clangdFileStatus = true,
       usePlaceholders = true,
       completeUnimported = true,
       semanticHighlighting = true,
-      fallbackFlags = { "--std=c++20" },
+      fallbackFlags = {
+        "--std=c++20",
+        "--background-index",
+        "--pch-storage=memory",
+        "--clang-tidy",
+        "--suggest-missing-includes",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--fallback-style=llvm",
+        "--enable-config",
+      },
     },
   },
   sqlls = {},
@@ -104,12 +115,12 @@ return {
         ft = "lua", -- only load on lua files
         opts = {
           library = {
-            -- When relative, you can also provide a path to the library in the plugin dir
-            { "luvit-meta/library", words = { "vim%.uv" } },
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           },
         },
       },
-      { "Bilal2453/luvit-meta", lazy = true },
     },
     event = { "BufReadPre", "BufNewFile" },
 
