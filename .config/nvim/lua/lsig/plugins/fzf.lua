@@ -19,6 +19,16 @@ return {
           ["<C-b>"] = "preview-up",
         },
       },
+      previewers = {
+        builtin = {
+          syntax_limit_b = 1024 * 100, -- 100KB
+        },
+      },
+      grep = {
+        rg_glob = true, -- enable glob parsing
+        glob_flag = "--iglob", -- case insensitive globs
+        glob_separator = "%s%-%-", -- query separator pattern (lua): ' --'
+      },
       git = {
         status = {
           actions = {
