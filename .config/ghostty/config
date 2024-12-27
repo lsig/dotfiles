@@ -1,0 +1,60 @@
+
+# Terminal settings
+term = "xterm-256color"
+
+# Fullscreen settings
+macos-titlebar-style = "hidden"
+window-decoration = false
+macos-non-native-fullscreen = true
+fullscreen = true
+
+# Window settings
+background-opacity = 0.85
+background-blur-radius = 50
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-decoration = true
+window-theme = "dark"
+macos-option-as-alt = true
+
+# Font settings
+font-family = "Hack Nerd Font"
+font-family-bold = "Hack Nerd Font"
+font-family-italic = "Hack Nerd Font"
+font-family-bold-italic = "Hack Nerd Font"
+font-size = 15
+font-thicken = true
+font-variation = "wght=500"
+
+# Cursor
+cursor-style = "block"
+cursor-style-blink = false
+shell-integration-features = "no-cursor"
+
+# Mouse settings
+mouse-hide-while-typing = true
+
+# Tokyo Night colors
+background = "#1a1b26"
+foreground = "#a9b1d6"
+
+# Normal colors
+palette = "0=#32344a"
+palette = "1=#f7768e"
+palette = "2=#9ece6a"
+palette = "3=#e0af68"
+palette = "4=#7aa2f7"
+palette = "5=#ad8ee6"
+palette = "6=#449dab"
+palette = "7=#787c99"
+
+# Bright colors
+palette = "8=#444b6a"
+palette = "9=#ff7a93"
+palette = "10=#b9f27c"
+palette = "11=#ff9e64"
+palette = "12=#7da6ff"
+palette = "13=#bb9af7"
+palette = "14=#0db9d7"
+palette = "15=#acb0d0"
