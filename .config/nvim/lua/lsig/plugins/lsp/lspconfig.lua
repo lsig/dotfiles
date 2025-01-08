@@ -103,6 +103,19 @@ local servers = {
 }
 
 return {
+  {
+    "nvim-flutter/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      lsp = {
+        on_attach = on_attach,
+      },
+    },
+    config = true,
+  },
   { -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
     dependencies = {

@@ -22,6 +22,14 @@ return {
       previewers = {
         builtin = {
           syntax_limit_b = 1024 * 100, -- 100KB
+          extensions = {
+            ["jpg"] = { "viu", "-b" },
+            ["jpeg"] = { "viu", "-b" },
+            ["png"] = { "viu", "-b" },
+            ["gif"] = { "viu", "-b" },
+            ["ico"] = { "viu", "-b" },
+            ["webp"] = { "viu", "-b" },
+          },
         },
       },
       grep = {

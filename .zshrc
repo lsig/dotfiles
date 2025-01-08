@@ -71,19 +71,21 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# ENV Variables
+export GIT_EDITOR='nvim'
+export PATH=$PATH:$HOME/go/bin
+export PATH=$HOME/development/flutter/bin:$PATH
+export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
+export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export MANPAGER="nvim +Man!"
+
 # Aliases
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 
-# ENV Variables
-export GIT_EDITOR='nvim'
-export PATH=$PATH:$HOME/go/bin
-export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
-export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
-
 # Shell integrations
 source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
