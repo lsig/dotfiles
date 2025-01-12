@@ -37,14 +37,6 @@ return {
         },
       })
 
-      -- Hop config
-      require("mini.jump2d").setup({
-        view = { dim = true },
-        mappings = {
-          start_jumping = ";",
-        },
-      })
-
       -- Hipattern setup
       local hipatterns = require("mini.hipatterns")
       local hi_words = MiniExtra.gen_highlighter.words
