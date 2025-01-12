@@ -45,6 +45,7 @@ return {
       notifier = { enabled = true },
       lazygit = { enabled = true },
       dim = { enabled = true },
+      gitbrowse = { enabled = true },
     },
   },
 }

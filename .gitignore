@@ -4,3 +4,5 @@ AppSupport
 .config/wireshark
 .config/nvim.bak
 .config/gcloud
+.config/lmk
+.config/flutter

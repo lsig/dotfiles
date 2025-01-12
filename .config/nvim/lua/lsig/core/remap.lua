@@ -81,3 +81,19 @@ vim.keymap.set("v", ">", ">gv")
 
 -- x mode remaps
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Terminal
+vim.keymap.set("n", "<leader>tt", function()
+  Snacks.terminal.toggle(vim.o.shell, {
+    win = {
+      width = 0.6,
+      height = 0.6,
+      relative = "editor",
+      border = "rounded",
+      title = "Terminal",
+      title_pos = "center",
+    },
+    toggle = true,
+    cwd = vim.fn.expand("%:p:h"),
+  })
+end, { desc = "Open floating terminal" })

@@ -79,6 +79,7 @@ export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
 export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases
 alias ls='ls --color'
