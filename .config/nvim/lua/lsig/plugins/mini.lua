@@ -59,18 +59,6 @@ return {
         },
       })
 
-      -- Notify setup
-      local notify = require("mini.notify")
-      notify.setup({
-        window = {
-          config = {
-            border = "rounded",
-          },
-        },
-      })
-
-      vim.notify = notify.make_notify()
-
       -- Clue
       local custom_clues = {
         { mode = "n", keys = "<Leader>b", desc = "+Buffers" },
