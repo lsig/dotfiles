@@ -22,13 +22,11 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    lazy = true,
+    ft = "markdown",
     opts = {},
     dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
   },
-  -- {
-  --   "sphamba/smear-cursor.nvim",
-  --   opts = {},
-  -- },
   {
     dir = "~/repos/messenger.nvim", -- Your path
     name = "messenger",
@@ -42,6 +40,11 @@ return {
     priority = 1000,
     lazy = false,
     ---@type snacks.Config
-    opts = {},
+    opts = {
+      bigfile = { enabled = true },
+      notifier = { enabled = true },
+      lazygit = { enabled = true },
+      dim = { enabled = true },
+    },
   },
 }

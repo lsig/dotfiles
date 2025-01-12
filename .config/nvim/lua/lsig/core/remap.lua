@@ -1,5 +1,7 @@
 -- normal mode remaps
 vim.keymap.set("n", "-", ":Oil<CR>", { silent = true, desc = "Open Oil" })
+vim.keymap.set("n", "<leader>ds", "<Cmd>lua Snacks.dim.enable()<CR>", { silent = true, desc = "Dim scope" })
+vim.keymap.set("n", "<leader>dS", "<Cmd>lua Snacks.dim.disable()<CR>", { silent = true, desc = "Disable dim scope" })
 
 -- Fzf
 vim.keymap.set("n", "<C-\\>", ":FzfLua buffers<CR>", { desc = "Search commands" })
@@ -39,15 +41,9 @@ vim.keymap.set("n", "<leader>gP", ":Git push<CR>", { silent = true, desc = "Git 
 vim.keymap.set("n", "<leader>gp", ":Git pull<CR>", { silent = true, desc = "Git pull" })
 vim.keymap.set("n", "<leader>gc", "<Cmd>Git commit<CR>", { silent = true, desc = "Commit" })
 vim.keymap.set("n", "<leader>gC", "<Cmd>Git commit --amend<CR>", { silent = true, desc = "Commit amend" })
-vim.keymap.set("n", "<leader>gl", "<Cmd>Git log --oneline<CR>", { silent = true, desc = "log" })
+vim.keymap.set("n", "<leader>gl", "<Cmd>lua Snacks.lazygit.log_file()<CR>", { silent = true, desc = "log" })
 vim.keymap.set("n", "<leader>gL", "<Cmd>Git log --oneline --follow -- %<CR>", { silent = true, desc = "Log buffer" })
 vim.keymap.set("n", "<leader>gS", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
-vim.keymap.set(
-  "x",
-  "<leader>gs",
-  "<Cmd>lua MiniGit.show_at_cursor()<CR>",
-  { silent = true, desc = "Show at selection" }
-)
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")
@@ -64,6 +60,12 @@ vim.keymap.set("n", "Q", "<nop>")
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set(
+  "n",
+  "<leader>Q",
+  "<Cmd>FzfLua lsp_workspace_diagnostics<CR>",
+  { desc = "Open Workspace diagnostics list" }
+)
 
 -- Undotree
 vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>", { silent = true, desc = "Toggle undotree" })
