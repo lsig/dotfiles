@@ -63,6 +63,13 @@ return {
           },
         },
       },
+      diagnostics = {
+        winopts = {
+          preview = {
+            hidden = true,
+          },
+        },
+      },
     })
     fzf.register_ui_select()
 
