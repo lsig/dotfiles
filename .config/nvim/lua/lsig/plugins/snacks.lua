@@ -47,6 +47,15 @@ return {
         grep = {
           ignored = false,
         },
+        recent = {
+          layout = {
+            reverse = false,
+            preset = "vscode",
+          },
+          filter = {
+            cwd = true,
+          },
+        },
       },
     },
   },
@@ -69,6 +78,13 @@ return {
       "<C-p>",
       function()
         Snacks.picker.files()
+      end,
+      desc = "Find files",
+    },
+    {
+      "<C-e>",
+      function()
+        Snacks.picker.recent()
       end,
       desc = "Find files",
     },
