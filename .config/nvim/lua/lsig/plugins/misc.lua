@@ -35,17 +35,4 @@ return {
       border = "rounded",
     },
   },
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    ---@type snacks.Config
-    opts = {
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      lazygit = { enabled = true },
-      dim = { enabled = true },
-      gitbrowse = { enabled = true },
-    },
-  },
 }
