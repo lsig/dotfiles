@@ -39,9 +39,12 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
 return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
-  { "mbbill/undotree", event = "VeryLazy" },
   {
     "stevearc/oil.nvim",
+    lazy = true,
+    keys = {
+      { "-", "<Cmd>lua require('oil').open_float()<CR>", desc = "Open Oil" },
+    },
     opts = {
       default_file_explorer = true,
       delete_to_trash = true,
