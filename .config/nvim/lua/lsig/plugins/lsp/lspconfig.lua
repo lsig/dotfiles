@@ -100,7 +100,8 @@ local servers = {
 return {
   {
     "nvim-flutter/flutter-tools.nvim",
-    lazy = false,
+    lazy = true,
+    ft = "dart",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
