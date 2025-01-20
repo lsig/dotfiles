@@ -2,6 +2,7 @@ return {
   {
     "echasnovski/mini.nvim",
     version = false,
+    lazy = true,
     config = function()
       require("mini.ai").setup()
       require("mini.doc").setup()

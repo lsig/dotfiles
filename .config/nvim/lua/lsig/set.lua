@@ -38,6 +38,9 @@ vim.opt.timeoutlen = 300
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 

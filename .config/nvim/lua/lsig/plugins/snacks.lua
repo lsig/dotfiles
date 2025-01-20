@@ -10,6 +10,26 @@ return {
     gitbrowse = { enabled = true },
     terminal = { enabled = true },
     input = { enabled = true },
+    dashboard = {
+      enabled = true,
+      preset = {
+        keys = {
+          { icon = " ", key = "p", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+          { icon = " ", key = "f", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "e", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          {
+            icon = " ",
+            key = "c",
+            desc = "Config",
+            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+          },
+          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+      },
+    },
     picker = {
       formatters = {
         file = {
@@ -32,6 +52,7 @@ return {
         diagnostics = {
           layout = {
             reverse = false,
+            preview = "main",
             preset = "ivy",
           },
         },
@@ -46,6 +67,10 @@ return {
         },
         grep = {
           ignored = false,
+          layout = {
+            preview = "main",
+            preset = "ivy",
+          },
         },
         recent = {
           layout = {
@@ -152,6 +177,13 @@ return {
         Snacks.picker.diagnostics()
       end,
       desc = "LSP Diagnostics",
+    },
+    {
+      "<leader>:",
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = "Command History",
     },
   },
   -- Auto-start files picker when opening a directory

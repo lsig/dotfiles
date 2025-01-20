@@ -1,5 +1,6 @@
 -- normal mode remaps
 vim.keymap.set("n", "-", ":Oil<CR>", { silent = true, desc = "Open Oil" })
+vim.keymap.set("n", "-", require("oil").open_float, { silent = true, desc = "Open Oil" })
 vim.keymap.set("n", "<leader>ds", "<Cmd>lua Snacks.dim.enable()<CR>", { silent = true, desc = "Dim scope" })
 vim.keymap.set("n", "<leader>dS", "<Cmd>lua Snacks.dim.disable()<CR>", { silent = true, desc = "Disable dim scope" })
 
@@ -47,7 +48,7 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Undotree
-vim.keymap.set("n", "<leader>U", ":UndotreeToggle<CR>", { silent = true, desc = "Toggle undotree" })
+vim.keymap.set("n", "<leader>U", "<Cmd>lua Snacks.picker.undo()<CR>", { silent = true, desc = "Toggle undotree" })
 
 -- insert mode remaps
 vim.keymap.set("i", "<C-c>", "<ESC>")

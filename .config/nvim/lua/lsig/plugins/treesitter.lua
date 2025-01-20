@@ -23,6 +23,7 @@ return {
           "markdown_inline",
           "templ",
           "go",
+          "regex",
         },
         auto_install = true,
         sync_install = false,

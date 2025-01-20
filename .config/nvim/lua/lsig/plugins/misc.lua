@@ -7,6 +7,35 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
+-- Restore cursor to file position in previous editing session
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function(args)
+    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+    local line_count = vim.api.nvim_buf_line_count(args.buf)
+    if mark[1] > 0 and mark[1] <= line_count then
+      vim.cmd('normal! g`"zz')
+    end
+  end,
+})
+-- Show cursorline only on active windows
+vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
+  callback = function()
+    if vim.w.auto_cursorline then
+      vim.wo.cursorline = true
+      vim.w.auto_cursorline = false
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
+  callback = function()
+    if vim.wo.cursorline then
+      vim.w.auto_cursorline = true
+      vim.wo.cursorline = false
+    end
+  end,
+})
+
 return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
@@ -17,7 +46,18 @@ return {
       default_file_explorer = true,
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
-      keymaps = { ["<C-t>"] = false },
+      keymaps = {
+        ["q"] = { "actions.close", mode = "n" },
+        ["<C-t>"] = false,
+      },
+      float = {
+        max_width = 0.6,
+        max_height = 0.6,
+        border = "rounded",
+        win_options = {
+          winblend = 0,
+        },
+      },
     },
   },
   {
