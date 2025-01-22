@@ -40,6 +40,11 @@ return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  {
     "stevearc/oil.nvim",
     lazy = true,
     keys = {
