@@ -43,6 +43,7 @@ return {
         go = { "gofmt" },
         c = { "clang-format" },
         cpp = { "clang-format" },
+        ocaml = { "ocamlformat" },
       },
     },
   },

@@ -210,7 +210,13 @@ return {
         },
       })
 
+      require("lspconfig").ocamllsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
       require("lspconfig").tailwindcss.setup({
+        on_attach = on_attach,
         filetypes = {
           "templ",
           "html",
