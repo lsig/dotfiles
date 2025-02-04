@@ -87,6 +87,7 @@ alias vim='nvim'
 alias c='clear'
 
 # Shell integrations
+[[ ! -r '/Users/logisigurdarson/.opam/opam-init/init.zsh' ]] || source '/Users/logisigurdarson/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"

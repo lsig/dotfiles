@@ -40,6 +40,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to clipboard" 
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("x", "<C-_>", "<Cmd>lua Snacks.picker.lines()<CR>", { silent = true, desc = "Show at cursor" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })

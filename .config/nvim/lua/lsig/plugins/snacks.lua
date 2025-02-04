@@ -10,6 +10,7 @@ return {
     gitbrowse = { enabled = true },
     terminal = { enabled = true },
     input = { enabled = true },
+    explorer = { enabled = true },
     dashboard = {
       enabled = true,
       preset = {
@@ -81,6 +82,13 @@ return {
             cwd = true,
           },
         },
+        explorer = {
+          layout = {
+            layout = {
+              position = "right",
+            },
+          },
+        },
       },
     },
   },
@@ -114,7 +122,7 @@ return {
       desc = "Find files",
     },
     {
-      "<C-_>",
+      "<leader>/",
       function()
         Snacks.picker.lines()
       end,

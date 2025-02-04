@@ -1,4 +1,4 @@
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --features=catppuccin-mocha --side-by-side --line-numbers
+    pager: delta --dark --paging=never --features=catppuccin-mocha --line-numbers
