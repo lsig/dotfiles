@@ -23,8 +23,8 @@ return {
 
       ["<Tab>"] = {},
       ["<S-Tab>"] = {},
-      ["<C-j>"] = { "snippet_forward", "fallback" },
-      ["<C-k>"] = { "snippet_backward", "fallback" },
+      ["<C-l>"] = { "snippet_forward", "fallback" },
+      ["<C-h>"] = { "snippet_backward", "fallback" },
     },
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -57,7 +57,7 @@ return {
               text = function(ctx)
                 local sources = {
                   lsp = "[LSP]",
-                  snippets = "[LuaSnip]",
+                  snippets = "[Snippets]",
                   path = "[Path]",
                   buffer = "[Buffer]",
                   nvim_lua = "[Lua]",

@@ -10,7 +10,7 @@ return {
     gitbrowse = { enabled = true },
     terminal = { enabled = true },
     input = { enabled = true },
-    explorer = { enabled = true },
+    image = { enabled = true },
     dashboard = {
       enabled = true,
       preset = {
@@ -80,13 +80,6 @@ return {
           },
           filter = {
             cwd = true,
-          },
-        },
-        explorer = {
-          layout = {
-            layout = {
-              position = "right",
-            },
           },
         },
       },

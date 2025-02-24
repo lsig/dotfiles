@@ -80,6 +80,7 @@ export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
+export TERM=xterm-ghostty
 
 # Aliases
 alias ls='ls --color'

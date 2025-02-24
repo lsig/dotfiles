@@ -9,9 +9,7 @@ return {
       show_end_of_buffer = true,
       transparent_background = false,
       integrations = {
-        cmp = true,
         mason = true,
-        fzf = true,
         mini = {
           enabled = true,
           indentscope_color = "",

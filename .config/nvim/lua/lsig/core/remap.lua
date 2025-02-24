@@ -1,6 +1,7 @@
 -- normal mode remaps
 vim.keymap.set("n", "<leader>ds", "<Cmd>lua Snacks.dim.enable()<CR>", { silent = true, desc = "Dim scope" })
 vim.keymap.set("n", "<leader>dS", "<Cmd>lua Snacks.dim.disable()<CR>", { silent = true, desc = "Disable dim scope" })
+vim.keymap.set("n", "-", "<Cmd>lua MiniFiles.open()<CR>", { silent = true, desc = "Open MiniFiles" })
 
 -- window remaps
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
