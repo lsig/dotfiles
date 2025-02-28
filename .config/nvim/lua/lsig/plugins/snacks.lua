@@ -11,6 +11,7 @@ return {
     terminal = { enabled = true },
     input = { enabled = true },
     image = { enabled = true },
+    rename = { enabled = true },
     dashboard = {
       enabled = true,
       preset = {

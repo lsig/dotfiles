@@ -11,11 +11,6 @@ return {
       })
       require("mini.icons").setup()
       require("mini.extra").setup()
-      require("mini.files").setup({
-        mappings = {
-          go_in_plus = "<CR>",
-        },
-      })
       require("mini.comment").setup()
       require("mini.surround").setup()
       require("mini.bracketed").setup()

@@ -1,7 +1,6 @@
 -- normal mode remaps
 vim.keymap.set("n", "<leader>ds", "<Cmd>lua Snacks.dim.enable()<CR>", { silent = true, desc = "Dim scope" })
 vim.keymap.set("n", "<leader>dS", "<Cmd>lua Snacks.dim.disable()<CR>", { silent = true, desc = "Disable dim scope" })
-vim.keymap.set("n", "-", "<Cmd>lua MiniFiles.open()<CR>", { silent = true, desc = "Open MiniFiles" })
 
 -- window remaps
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
@@ -37,6 +36,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<BS>", "ciw")
+vim.keymap.set("n", "gV", "`[v`]")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })

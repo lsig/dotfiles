@@ -36,6 +36,15 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "OilActionsPost",
+  callback = function(event)
+    if event.data.actions.type == "move" then
+      Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
+    end
+  end,
+})
+
 return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
@@ -56,6 +65,30 @@ return {
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
       { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
+  },
+  {
+    "stevearc/oil.nvim",
+    lazy = true,
+    keys = {
+      { "-", "<Cmd>lua require('oil').open_float()<CR>", desc = "Open Oil" },
+    },
+    opts = {
+      default_file_explorer = true,
+      delete_to_trash = true,
+      skip_confirm_for_simple_edits = true,
+      keymaps = {
+        ["q"] = { "actions.close", mode = "n" },
+        ["<C-t>"] = false,
+      },
+      float = {
+        max_width = 0.6,
+        max_height = 0.6,
+        border = "rounded",
+        win_options = {
+          winblend = 0,
+        },
+      },
     },
   },
   {
