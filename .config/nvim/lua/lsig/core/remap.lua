@@ -46,6 +46,10 @@ vim.keymap.set("x", "<C-_>", "<Cmd>lua Snacks.picker.lines()<CR>", { silent = tr
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "gK", function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle diagnostic virtual_lines" })
 
 -- Undotree
 vim.keymap.set("n", "<leader>U", "<Cmd>lua Snacks.picker.undo()<CR>", { silent = true, desc = "Toggle undotree" })

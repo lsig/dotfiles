@@ -47,5 +47,15 @@ vim.opt.inccommand = "split"
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Folds
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({ fold = " " })
+
+-- File Explorer
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

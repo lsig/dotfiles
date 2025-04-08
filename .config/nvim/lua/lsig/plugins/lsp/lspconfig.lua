@@ -30,6 +30,21 @@ local on_attach = function(client, bufnr)
   end
 end
 
+vim.diagnostic.config({
+  virtual_text = {
+    enabled = true,
+    severity = {
+      max = vim.diagnostic.severity.WARN,
+    },
+  },
+  virtual_lines = {
+    enabled = true,
+    severity = {
+      min = vim.diagnostic.severity.ERROR,
+    },
+  },
+})
+
 local servers = {
   pyright = {
     python = {
