@@ -24,6 +24,7 @@ return {
           "templ",
           "go",
           "regex",
+          "ruby",
         },
         auto_install = true,
         sync_install = false,

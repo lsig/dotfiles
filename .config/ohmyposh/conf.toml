@@ -7,10 +7,10 @@ final_space = true
   foreground = 'magenta'
   background = 'transparent'
 
-[transient_prompt]
-  template = '❯ '
-  background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+# [transient_prompt]
+#   template = '❯ '
+#   background = 'transparent'
+#   foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -25,7 +25,6 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
@@ -37,7 +36,6 @@ final_space = true
 
     [blocks.segments.properties]
       branch_icon = ''
-      cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
 
@@ -53,7 +51,6 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      cache_duration = 'none'
       threshold = 5000
 
 [[blocks]]

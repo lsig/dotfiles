@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd("User", {
 
 return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
+  { "tpope/vim-rails", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
