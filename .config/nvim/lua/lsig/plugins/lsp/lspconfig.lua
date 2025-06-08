@@ -38,6 +38,7 @@ vim.diagnostic.config({
     },
   },
   virtual_lines = {
+    current_line = true,
     enabled = true,
     severity = {
       min = vim.diagnostic.severity.ERROR,
@@ -57,7 +58,9 @@ local servers = {
       },
     },
   },
-  html = {},
+  html = {
+    filetypes = { "html", "html.erb" },
+  },
   cssls = {},
   ts_ls = {},
   clangd = {
@@ -132,8 +135,8 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { "williamboman/mason.nvim", config = true },
-      { "williamboman/mason-lspconfig.nvim" },
+      { "mason-org/mason.nvim", version = "^1.*", config = true },
+      { "mason-org/mason-lspconfig.nvim", version = "^1.*" },
       { "WhoIsSethDaniel/mason-tool-installer.nvim" },
       {
         "folke/lazydev.nvim",
@@ -225,9 +228,31 @@ return {
         },
       })
 
+      require("lspconfig").ruby_lsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        mason = false,
+        init_options = {
+          formatter = "standard",
+          linters = { "standard" },
+          addonSettings = {
+            ["Ruby LSP Rails"] = {
+              enablePendingMigrationsPrompt = false,
+            },
+          },
+        },
+      })
+
       require("lspconfig").ocamllsp.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        cmd = {
+          "opam",
+          "exec",
+          "--switch=ocaml4.14.2", -- explicitly use the correct switch
+          "--",
+          "ocamllsp",
+        },
       })
 
       require("lspconfig").tailwindcss.setup({

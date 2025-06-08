@@ -44,6 +44,7 @@ return {
         c = { "clang-format" },
         cpp = { "clang-format" },
         ocaml = { "ocamlformat" },
+        ruby = { "rubyfmt" },
       },
     },
   },

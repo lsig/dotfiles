@@ -76,7 +76,6 @@ export GIT_EDITOR='nvim'
 export PATH=$PATH:$HOME/go/bin
 export PATH=$HOME/development/flutter/bin:$PATH
 export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
-export GCC_ROOT=$(dirname $(dirname $(readlink -f $(which g++-14))))
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -92,3 +91,4 @@ alias c='clear'
 source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(~/.local/bin/mise activate)"
