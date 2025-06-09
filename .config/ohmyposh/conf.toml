@@ -7,10 +7,10 @@ final_space = true
   foreground = 'magenta'
   background = 'transparent'
 
-# [transient_prompt]
-#   template = '❯ '
-#   background = 'transparent'
-#   foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+[transient_prompt]
+  template = '❯ '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
 [[blocks]]
   type = 'prompt'
