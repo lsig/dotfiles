@@ -79,7 +79,7 @@ export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
-export TERM=xterm-ghostty
+export TERM=xterm-256color
 
 # Aliases
 alias ls='ls --color'
