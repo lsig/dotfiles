@@ -48,13 +48,13 @@ vim.diagnostic.config({
 
 local servers = {
   pyright = {
+    pyright = {
+      disableOrganizeImports = true,
+    },
     python = {
       analysis = {
-        autoImportCompletion = true,
-        autoSearchPaths = true,
-        diagnosticMode = "openFilesOnly",
-        useLibraryCodeForTypes = true,
-        typeCheckingMode = "off",
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { "*" },
       },
     },
   },
