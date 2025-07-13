@@ -26,10 +26,10 @@ return {
         }
       end,
       formatters_by_ft = {
-        javascript = { "biome" },
-        typescript = { "biome" },
-        javascriptreact = { "biome" },
-        typescriptreact = { "biome" },
+        javascript = { "biome", "biome-organize-imports" },
+        javascriptreact = { "biome", "biome-organize-imports" },
+        typescript = { "biome", "biome-organize-imports" },
+        typescriptreact = { "biome", "biome-organize-imports" },
         svelte = { "biome" },
         css = { "biome" },
         html = { "biome" },
