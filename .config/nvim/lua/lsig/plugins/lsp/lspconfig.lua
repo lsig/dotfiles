@@ -13,6 +13,8 @@ local on_attach = function(client, bufnr)
   -- See `:help K` for why this keymap
   nmap("K", vim.lsp.buf.hover, "Hover Documentation")
   nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+  nmap("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
+  nmap("<leader>q", vim.diagnostic.setloclist, "Open diagnostics list")
 
   -- Lesser used LSP functionality
   nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -30,19 +32,33 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local function diagnostic_format(diagnostic)
+  local diagnostic_message = {
+    [vim.diagnostic.severity.ERROR] = diagnostic.message,
+    [vim.diagnostic.severity.WARN] = diagnostic.message,
+    [vim.diagnostic.severity.INFO] = diagnostic.message,
+    [vim.diagnostic.severity.HINT] = diagnostic.message,
+  }
+  return diagnostic_message[diagnostic.severity]
+end
+
 vim.diagnostic.config({
+  severity_sort = true,
+  float = { border = "rounded", source = "if_many" },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅚 ",
+      [vim.diagnostic.severity.WARN] = "󰀪 ",
+      [vim.diagnostic.severity.INFO] = "󰋽 ",
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
+    },
+  } or {},
   virtual_text = {
-    enabled = true,
-    severity = {
-      max = vim.diagnostic.severity.WARN,
-    },
-  },
-  virtual_lines = {
-    current_line = true,
-    enabled = true,
-    severity = {
-      min = vim.diagnostic.severity.ERROR,
-    },
+    current_line = false,
+    source = "if_many",
+    spacing = 2,
+    format = diagnostic_format,
   },
 })
 
@@ -117,20 +133,6 @@ local servers = {
 }
 
 return {
-  {
-    "nvim-flutter/flutter-tools.nvim",
-    lazy = true,
-    ft = "dart",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      lsp = {
-        on_attach = on_attach,
-      },
-    },
-    config = true,
-  },
   { -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -178,14 +180,9 @@ return {
 
       mason_tool_installer.setup({
         ensure_installed = {
-          "prettier",
           "stylua",
-          "black",
-          "pylint",
-          "eslint_d",
           "clang-format",
           "golangci-lint",
-          "pylint",
         },
       })
 

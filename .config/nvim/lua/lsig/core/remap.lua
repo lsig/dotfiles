@@ -1,7 +1,3 @@
--- normal mode remaps
-vim.keymap.set("n", "<leader>ds", "<Cmd>lua Snacks.dim.enable()<CR>", { silent = true, desc = "Dim scope" })
-vim.keymap.set("n", "<leader>dS", "<Cmd>lua Snacks.dim.disable()<CR>", { silent = true, desc = "Disable dim scope" })
-
 -- window remaps
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sl", "<C-w>s", { desc = "Split window horizontally" })
@@ -10,24 +6,10 @@ vim.keymap.set("n", "<leader>s-", ":vertical resize -5<CR>", { silent = true, de
 vim.keymap.set("n", "<leader>s+", ":vertical resize +5<CR>", { silent = true, desc = "Increase vertical size" })
 vim.keymap.set("n", "<leader>sx", ":close<CR>", { silent = true, desc = "Close window" })
 
--- tab remaps
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { silent = true, desc = "Open new tab" })
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true, desc = "Close current tab" })
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { silent = true, desc = "Go to next tab" })
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { silent = true, desc = "Go to previous tab" })
-
--- buffer remaps
-vim.keymap.set("n", "<leader>bx", ":lua MiniBufremove.delete() <CR>", { silent = true, desc = "Delete buffer" })
-
 -- Git remaps
 vim.keymap.set("n", "<leader>go", "<Cmd>lua require('mini.diff').toggle_overlay()<CR>", { desc = "[T]oggle [O]verlay" })
-vim.keymap.set("n", "<leader>gP", ":Git push<CR>", { silent = true, desc = "Git push" })
-vim.keymap.set("n", "<leader>gp", ":Git pull<CR>", { silent = true, desc = "Git pull" })
-vim.keymap.set("n", "<leader>gc", "<Cmd>Git commit<CR>", { silent = true, desc = "Commit" })
-vim.keymap.set("n", "<leader>gC", "<Cmd>Git commit --amend<CR>", { silent = true, desc = "Commit amend" })
 vim.keymap.set("n", "<leader>gl", "<Cmd>lua Snacks.lazygit.log_file()<CR>", { silent = true, desc = "log" })
 vim.keymap.set("n", "<leader>gL", "<Cmd>lua Snacks.picker.git_log_line()<CR>", { silent = true, desc = "Log buffer" })
-vim.keymap.set("n", "<leader>gS", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { silent = true, desc = "Show at cursor" })
 
 -- remaps
 vim.keymap.set("n", "J", "mzJ`z")
@@ -42,14 +24,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("x", "<C-_>", "<Cmd>lua Snacks.picker.lines()<CR>", { silent = true, desc = "Show at cursor" })
-
--- Diagnostic keymaps
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-vim.keymap.set("n", "gK", function()
-  local new_config = not vim.diagnostic.config().virtual_lines
-  vim.diagnostic.config({ virtual_lines = new_config })
-end, { desc = "Toggle diagnostic virtual_lines" })
 
 -- Undotree
 vim.keymap.set("n", "<leader>U", "<Cmd>lua Snacks.picker.undo()<CR>", { silent = true, desc = "Toggle undotree" })

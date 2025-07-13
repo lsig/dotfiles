@@ -47,7 +47,6 @@ vim.api.nvim_create_autocmd("User", {
 
 return {
   { "tpope/vim-sleuth", event = "VeryLazy" },
-  { "tpope/vim-rails", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
@@ -98,13 +97,5 @@ return {
     ft = "markdown",
     opts = {},
     dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-  },
-  {
-    dir = "~/repos/messenger.nvim", -- Your path
-    name = "messenger",
-    event = "VeryLazy",
-    opts = {
-      border = "rounded",
-    },
   },
 }
