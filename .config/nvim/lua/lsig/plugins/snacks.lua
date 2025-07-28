@@ -12,26 +12,6 @@ return {
     input = { enabled = true },
     image = { enabled = true },
     rename = { enabled = true },
-    dashboard = {
-      enabled = true,
-      preset = {
-        keys = {
-          { icon = " ", key = "p", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-          { icon = " ", key = "f", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "e", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          {
-            icon = " ",
-            key = "c",
-            desc = "Config",
-            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-          },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
-        },
-      },
-    },
     picker = {
       formatters = {
         file = {
@@ -95,32 +75,11 @@ return {
       desc = "Search buffers",
     },
     {
-      "<C-f>",
-      function()
-        Snacks.picker.grep({ live = true })
-      end,
-      desc = "Live grep",
-    },
-    {
-      "<C-p>",
-      function()
-        Snacks.picker.files()
-      end,
-      desc = "Find files",
-    },
-    {
       "<C-e>",
       function()
         Snacks.picker.recent()
       end,
       desc = "Find files",
-    },
-    {
-      "<leader>/",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Grep current buffer",
     },
     {
       "<C-g>",

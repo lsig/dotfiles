@@ -28,6 +28,17 @@ vim.keymap.set("x", "<C-_>", "<Cmd>lua Snacks.picker.lines()<CR>", { silent = tr
 -- Undotree
 vim.keymap.set("n", "<leader>U", "<Cmd>lua Snacks.picker.undo()<CR>", { silent = true, desc = "Toggle undotree" })
 
+-- Pick
+vim.keymap.set("n", "<C-f>", "<Cmd>Pick grep_live<CR>", { silent = true, desc = "Grep live" })
+vim.keymap.set("n", "<C-p>", "<Cmd>Pick files<CR>", { silent = true, desc = "Find files" })
+vim.keymap.set(
+  "n",
+  "<leader>/",
+  "<Cmd>Pick buf_lines scope='current'<CR>",
+  { silent = true, desc = "Grep current buffer" }
+)
+vim.keymap.set("n", "<C-p>", "<Cmd>Pick files<CR>", { silent = true, desc = "Find files" })
+
 -- insert mode remaps
 vim.keymap.set("i", "<C-c>", "<ESC>")
 

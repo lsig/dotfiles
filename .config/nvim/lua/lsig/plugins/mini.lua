@@ -2,10 +2,14 @@ return {
   {
     "echasnovski/mini.nvim",
     version = false,
-    lazy = true,
     config = function()
       require("mini.ai").setup()
       require("mini.doc").setup()
+      require("mini.pick").setup({
+        mappings = {
+          choose_marked = "<C-q>",
+        },
+      })
       require("mini.pairs").setup({
         modes = { insert = true, command = true, terminal = true },
       })
