@@ -252,6 +252,14 @@ return {
         },
       })
 
+      require("lspconfig").ruff.setup({
+        init_options = {
+          settings = {
+            logLevel = "debug",
+          },
+        },
+      })
+
       require("lspconfig").tailwindcss.setup({
         on_attach = on_attach,
         filetypes = {

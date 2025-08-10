@@ -38,7 +38,7 @@ return {
         markdown = { "biome" },
         graphql = { "biome" },
         lua = { "stylua" },
-        python = { "ruff" },
+        python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
         rust = { "rustfmt" },
         go = { "gofmt" },
         c = { "clang-format" },
