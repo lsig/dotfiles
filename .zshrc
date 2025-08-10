@@ -80,6 +80,7 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Aliases
 alias ls='ls --color'
@@ -92,3 +93,11 @@ source <(fzf --zsh)
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(~/.local/bin/mise activate)"
+
+# pnpm
+export PNPM_HOME="/Users/logisigurdarson/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
