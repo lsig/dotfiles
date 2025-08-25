@@ -1,9 +1,3 @@
-# Integrating Homebrew
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -76,7 +70,6 @@ export GIT_EDITOR='nvim'
 export PATH=$PATH:$HOME/go/bin
 export PATH=$HOME/development/flutter/bin:$PATH
 export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
