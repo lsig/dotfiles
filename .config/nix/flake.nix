@@ -10,11 +10,41 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
+      nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.vim
+        [
+          # CLIs
+          pkgs.oh-my-posh
+          pkgs.awscli2
+          pkgs.lazygit
+          pkgs.ripgrep
+          pkgs.neovim
+          pkgs.delta
+          pkgs.ruff
+          pkgs.stow
+          pkgs.tmux
+          pkgs.tree
+          pkgs.bat
+          pkgs.fnm
+          pkgs.fzf
+          pkgs.vim
+          pkgs.zsh
+          pkgs.fd
+          pkgs.gh
+          pkgs.go
+          pkgs.uv
+
+          # Apps
+          pkgs.alacritty
+          pkgs.raycast
         ];
+
+      fonts.packages = [
+        pkgs.nerd-fonts.hack
+        pkgs.nerd-fonts.jetbrains-mono
+      ];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
