@@ -21,6 +21,7 @@
           pkgs.lazygit
           pkgs.ripgrep
           pkgs.neovim
+          pkgs.zoxide
           pkgs.delta
           pkgs.ruff
           pkgs.stow
